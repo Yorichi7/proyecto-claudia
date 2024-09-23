@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #40E0D0; /* Fondo turquesa inicial */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    z-index: 10;
+}
+
+#main-text {
+    font-size: 2rem;
+    color: white;
+}
+
+#gift-button {
+    padding: 15px 30px;
+    font-size: 1rem;
+    border: none;
+    background-color: yellow;
+    color: black;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#gift-button:hover {
+    background-color: gold;
+}
+
+#message-container {
+    position: relative;
+    z-index: 10;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente para mejorar la legibilidad */
+    border-radius: 10px;
+}
+
+#flower-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none; /* No interferir con la interacción del usuario */
+}
+
+.flower {
+    position: absolute;
+    background-color: yellow;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: grow 6s ease-in-out infinite;
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+/* Imagen de fondo para la flor amarilla cuando aparece el mensaje */
+#flower-animation {
+    background-image: url('imagenes/flores-amarillas-1.png'); /* Cambia esto por la URL de la imagen que descargues */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
